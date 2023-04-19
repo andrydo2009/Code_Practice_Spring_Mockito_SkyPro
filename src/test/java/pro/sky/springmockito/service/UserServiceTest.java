@@ -3,19 +3,22 @@ package pro.sky.springmockito.service;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 
 import org.mockito.MockitoAnnotations;
+import org.mockito.junit.jupiter.MockitoExtension;
 import pro.sky.springmockito.dao.UserDaoImpl;
 import pro.sky.springmockito.model.User;
 
 import static org.mockito.Mockito.when;
 
+@ExtendWith(MockitoExtension.class)
 public class UserServiceTest {
     User userTestOne = new User("SkyProThree", "skyproThree@mail.ru");
     User userTestToo = new User("SkyPro", "skypro@mail.ru");
 
-    private UserService userService= new UserService();
+    private UserService userService;
 
     @Mock
     private UserDaoImpl userDao;
@@ -23,6 +26,7 @@ public class UserServiceTest {
     @Before
     public void setUser() {
         MockitoAnnotations.initMocks(this);
+        userService=new UserService();
     }
 
 
