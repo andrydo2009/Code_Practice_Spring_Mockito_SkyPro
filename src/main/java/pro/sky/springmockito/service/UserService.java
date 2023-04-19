@@ -16,6 +16,4 @@ public class UserService {
         return userDao.getUserByMail(userCheck.getMailUser()) != null;
     }
 
-    public void setUserDao() {
-    }
 }

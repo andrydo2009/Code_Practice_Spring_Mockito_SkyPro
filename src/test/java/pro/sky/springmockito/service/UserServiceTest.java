@@ -15,7 +15,7 @@ public class UserServiceTest {
     User userTestOne = new User("SkyProThree", "skyproThree@mail.ru");
     User userTestToo = new User("SkyPro", "skypro@mail.ru");
 
-    private UserService userService;
+    private UserService userService= new UserService();
 
     @Mock
     private UserDaoImpl userDao;
@@ -23,8 +23,6 @@ public class UserServiceTest {
     @Before
     public void setUser() {
         MockitoAnnotations.initMocks(this);
-        userService = new UserService();
-        userService.setUserDao();
     }
 
 
